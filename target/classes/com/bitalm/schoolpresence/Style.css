@@ -1,0 +1,33 @@
+.pane{
+-fx-background-image:url('Assets/BG.jpg');
+-fx-background-size:cover;
+
+}
+
+.but {
+-fx-background-color: #3B3C96;
+
+}
+
+.but:hover{
+-fx-background-color:#2D2E62;
+-fx-cursor:pointer;
+}
+
+.signb:hover{
+-fx-background-color:#3B3C96;
+-fx-color:black;
+}
+
+.pane2 {
+-fx-background-color: rgba(0,0,0,0.6);
+
+}
+
+
+
+
+
+.item:hover {
+-fx-background-color:#2D2E62;
+}
