@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="744.0" style="-fx-background-color: White;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bitalm.schoolpresence.Controllers.ReceiverController">
+   <children>
+      <Pane layoutX="396.0" layoutY="12.0" prefHeight="57.0" prefWidth="283.0" style="-fx-background-color: #3B3C96; -fx-background-radius: 20; -fx-border-radius: 20;">
+         <children>
+            <Text fx:id="message" fill="WHITE" layoutX="27.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="229.7294921875" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Pane>
+      <Circle fill="#d3d3d3" layoutX="708.0" layoutY="59.0" radius="18.0" stroke="#3b3c96" strokeType="INSIDE" />
+      <Circle fill="#00ee3c" layoutX="726.0" layoutY="66.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+   </children>
+</AnchorPane>

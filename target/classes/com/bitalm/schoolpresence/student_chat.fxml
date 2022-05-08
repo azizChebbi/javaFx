@@ -17,24 +17,24 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1380.0" style="-fx-background-color: #3B3C96;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bitalm.schoolpresence.ClassroomController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1380.0" style="-fx-background-color: #3B3C96;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bitalm.schoolpresence.StudentChat">
     <children>
       <Pane prefHeight="707.0" prefWidth="350.0" style="-fx-background-color: white;">
          <children>
-            <Text fill="#2d2e62" layoutX="109.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Students List" wrappingWidth="134.0">
+            <Text fx:id="professorname" layoutX="122.0" layoutY="638.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="125.21574803149599" />
+            <Circle fill="#ebebeb" layoutX="175.0" layoutY="149.0" radius="100.0" stroke="#3b3c96" strokeType="INSIDE" strokeWidth="5.0" />
+            <Text fx:id="studentname" fill="#3b3c96" layoutX="53.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aziz Chebbi" textAlignment="CENTER" wrappingWidth="244.9830722808838">
                <font>
                   <Font size="20.0" />
                </font>
             </Text>
-            <Button layoutX="74.0" layoutY="569.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="203.0" style="-fx-background-color: #2D2E62;" text="Save" textFill="WHITE" />
-            <Text fill="#2d2e62" layoutX="105.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date : " />
-            <Text fx:id="date" fill="#2d2e62" layoutX="155.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="89.21574803149605" />
-            <ScrollPane hbarPolicy="NEVER" layoutX="23.0" layoutY="125.0" prefHeight="419.0" prefWidth="308.0">
-               <content>
-                  <VBox fx:id="presence" prefHeight="486.0" prefWidth="297.0" style="-fx-background-color: White;" />
-               </content>
-            </ScrollPane>
-            <Text fx:id="professorname" layoutX="122.0" layoutY="638.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="125.21574803149599" />
+            <Text fx:id="selectedstudent11" fill="#1d1d46" layoutX="53.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chebbi106@gmail.com" textAlignment="CENTER" wrappingWidth="244.9830722808838" />
+            <Text fx:id="selectedstudent111" fill="#1d1d46" layoutX="53.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="50537925" textAlignment="CENTER" wrappingWidth="244.9830722808838" />
+            <Circle fill="#00ff06" layoutX="260.0" layoutY="199.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Text fx:id="selectedstudent1111" fill="#1d1d46" layoutX="62.0" layoutY="510.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" textAlignment="CENTER" wrappingWidth="66.98307228088379" />
+            <Text fx:id="selectedstudent112" fill="#1d1d46" layoutX="53.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First year engineering student" textAlignment="CENTER" wrappingWidth="244.9830722808838" />
+            <Text fx:id="date" fill="#1d1d46" layoutX="137.0" layoutY="509.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="150.9830722808838" />
+            <Button layoutX="84.0" layoutY="572.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="183.0" style="-fx-background-color: #3B3C96;" text="Check elimination" textFill="WHITE" />
          </children>
          <effect>
             <InnerShadow>
@@ -55,7 +55,7 @@
                   </DropShadow>
                </effect>
                <children>
-                  <Text fx:id="selectedstudent" fill="#3b3c96" layoutX="87.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="244.9830722808838">
+                  <Text fx:id="selectedprofessor" fill="#3b3c96" layoutX="87.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skander Abdallah" wrappingWidth="244.9830722808838">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -88,7 +88,7 @@
                         <Image url="@Assets/Group1.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="23.0" fitWidth="26.0" layoutX="651.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="23.0" fitWidth="26.0" layoutX="651.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Assets/Vector5.png" />
                      </image>
@@ -96,7 +96,7 @@
                   <TextArea fx:id="messagetextfield" layoutX="38.0" layoutY="26.0" prefHeight="50.0" prefWidth="450.0" style="-fx-background-color: #EBEBEB;" />
                </children>
             </Pane>
-            <ScrollPane hbarPolicy="NEVER" layoutY="91.0" prefHeight="504.0" prefWidth="744.0">
+            <ScrollPane hbarPolicy="NEVER" layoutX="-1.0" layoutY="103.0" prefHeight="493.0" prefWidth="750.0">
                <content>
                   <VBox fx:id="messagescontainer" prefHeight="495.0" prefWidth="744.0" style="-fx-background-color: White;" />
                </content>
@@ -126,16 +126,11 @@
                   </ImageView>
                   <ImageView fitHeight="16.0" fitWidth="18.0" layoutX="46.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Assets/Vector%20(1).png" />
+                        <Image url="@Assets/Vector1.png" />
                      </image>
                   </ImageView>
                </children>
             </Pane>
-            <ScrollPane hbarPolicy="NEVER" layoutY="192.0" prefHeight="444.0" prefWidth="267.0" style="-fx-background-color: #3B3C96;">
-               <content>
-                  <VBox fx:id="students" prefHeight="522.0" prefWidth="260.0" style="-fx-background-color: #3B3C96;" />
-               </content>
-            </ScrollPane>
          </children></Pane>
     </children>
 </AnchorPane>

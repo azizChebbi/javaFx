@@ -26,22 +26,21 @@ import java.util.ResourceBundle;
 
 public class HelloController {
     @FXML
-    private Scene  scene;
-    private Stage stage;
     public TextField usernamefield ;
     public TextField cinfield ;
     public Text errormessage ;
-    public Pane students ;
 
+    // load new screen
+    private void loadNewScreen(String file) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource(file));
+        Stage stage = new Stage() ;
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
 
     // ------------------ Sign In Screens -------------------
     private void getSignInScreen(ActionEvent event,String fxmlfile) throws IOException {
-        Parent root = null;
-        root = FXMLLoader.load(getClass().getResource(fxmlfile));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        loadNewScreen(fxmlfile);
     }
     public void getStudentSignInScreen(ActionEvent event) throws IOException {
         String fxmlfile = "SignIn/Student.fxml" ;
@@ -55,19 +54,16 @@ public class HelloController {
 
 
     // ------------------ Sign In Functions -------------------
-    private void signIn(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Classroom.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+    private void signIn(ActionEvent event,String file) throws IOException {
+        loadNewScreen(file);
     }
     public void signInStudent(ActionEvent event) throws IOException {
         String name = usernamefield.getText() ;
         String cin = cinfield.getText() ;
         try {
             Authentication.signInStudent(name,cin);
-            signIn(event);
+            StudentChat.student = name ;
+            signIn(event,"student_chat.fxml");
         } catch (Authentication.UserNotFoundException e) {
             errormessage.setText("Student not found, try again!");
         }
@@ -79,7 +75,8 @@ public class HelloController {
 
         try {
             Authentication.signInProfessor(name,cin);
-            signIn(event);
+            ClassroomController.professor = name ;
+            signIn(event,"Classroom.fxml");
         } catch (Authentication.UserNotFoundException e) {
             errormessage.setText("Professor not found, try again!");
         }
